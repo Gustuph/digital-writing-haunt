@@ -25,7 +25,16 @@ tw-story[tags~="street-background"] {  /* the tag added in step 2 */
 }
 tw-story[tags~="street-background"] {
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(./images/cinema.jpg) center center / cover no-repeat fixed;
-}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="street-background" color="purple"></tw-tag><tw-passagedata pid="1" name="Landing" tags="" position="900,725" size="100,100">&lt;audio src=&quot;./audio/fire.mp3&quot; autoplay loop&gt;&lt;/audio&gt;
+}
+
+tw-story[tags~="lobby-background"] {  /* the tag added in step 2 */
+  background-image: url(./images/lobby.jpg);  /* the image added in step 1 */
+  background-size: cover;  /* cover the whole element */
+  background-repeat: no-repeat;  /* do not repeat the background image */
+}
+tw-story[tags~="lobby-background"] {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(./images/lobby.jpg) center center / cover no-repeat fixed;
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="street-background" color="purple"></tw-tag><tw-tag name="lobby-background" color="blue"></tw-tag><tw-passagedata pid="1" name="Landing" tags="" position="900,725" size="100,100">&lt;audio src=&quot;./audio/fire.mp3&quot; autoplay loop&gt;&lt;/audio&gt;
 [[Begin?|First Scene]]</tw-passagedata><tw-passagedata pid="2" name="First Scene" tags="street-background" position="1200,725" size="100,100">As the fire rages on, a scream pierces the air and a car backfires as it speeds away from the street.
 You face the entrance to an old cinema, one that long predates many of the other buildings that have populated the area for as long as you can remember.
 Last night, it burnt down.
@@ -36,7 +45,7 @@ Last night, it burnt down.
 (set:$sibling to 0)
 (set:$drunk to 0)
 (set:$tickettaker to 0)
-(set:$proposee to 0)</tw-passagedata><tw-passagedata pid="3" name="Lobby" tags="" position="1250,1050" size="100,100">(if:$tickettaker is 0)[[[A young man stands behind the podium by the cinema door|Ticket Taker]]]
+(set:$proposee to 0)</tw-passagedata><tw-passagedata pid="3" name="Lobby" tags="lobby-background" position="1250,1050" size="100,100">(if:$tickettaker is 0)[[[A young man stands behind the podium by the cinema door|Ticket Taker]]]
 (else-if:$tickettaker is 1)[[[Dan fusses with his shirt collar and hem as he stands behind his podium by the cinema door|Ticket Taker]]]
 
 (if:$proposee is 1)[[[A woman is chewing her nails as she looks at each option in the snack bar|Proposee]]]
