@@ -13,12 +13,14 @@
   background-image: url(./images/cinema.jpg);  /* the image added in step 1 */
   background-size: cover;  /* cover the whole element */
   background-repeat: no-repeat;  /* do not repeat the background image */
-}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="street-background" color="purple"></tw-tag><tw-passagedata pid="1" name="Landing" tags="" position="900,725" size="100,100">[[Begin?|First Scene]] </tw-passagedata><tw-passagedata pid="2" name="First Scene" tags="street-background" position="1200,725" size="100,100">&lt;audio src=&quot;./audio/fire.mp3&quot; autoplay loop&gt;&lt;/audio&gt;
-
-As the fire rages on, a scream pierces the air and a car backfires as it speeds away from the street.
-[[A man leans against a car parked up in front of the cinema|Paramedic]]
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="street-background" color="purple"></tw-tag><tw-passagedata pid="1" name="Landing" tags="" position="900,725" size="100,100">&lt;audio src=&quot;./audio/fire.mp3&quot; autoplay loop&gt;&lt;/audio&gt;
+[[Begin?|First Scene]]</tw-passagedata><tw-passagedata pid="2" name="First Scene" tags="street-background" position="1200,725" size="100,100">As the fire rages on, a scream pierces the air and a car backfires as it speeds away from the street.
+You face the entrance to an old cinema, one that long predates many of the other buildings that have populated the area for as long as you can remember.
+Last night, it burnt down.
+[[A man leans against the front passenger door of a car parked up in front of the cinema|Paramedic]]
 [[The door into the cinema is open|Lobby]]
-</tw-passagedata><tw-passagedata pid="3" name="Lobby" tags="" position="1250,1050" size="100,100">[[The door back outside remains open|Street]]
+
+(set: $Paramedic to 0)</tw-passagedata><tw-passagedata pid="3" name="Lobby" tags="" position="1250,1050" size="100,100">[[The door back outside remains open|Street]]
 
 [[A young man stands behind the podium by the cinema door|Ticket Taker]]
 
@@ -28,9 +30,25 @@ As the fire rages on, a scream pierces the air and a car backfires as it speeds 
 
 [[The double doors at the back of the room lead into the theatre|Theatre]]
 
-[[Confront the ghost in the lobby|Proposer]]</tw-passagedata><tw-passagedata pid="4" name="Paramedic" tags="" position="1200,575" size="100,100">[[Step away from the paramedic|Street]]</tw-passagedata><tw-passagedata pid="5" name="Street" tags="" position="1350,725" size="100,100">[[The door into the cinema is open|Lobby]]
+[[Confront the ghost in the lobby|Proposer]]</tw-passagedata><tw-passagedata pid="4" name="Paramedic" tags="" position="1100,600" size="100,100">(if:$Paramedic is 0)[You approach the man and note he&#39;s dressed in a blue windbreaker and pants, a red tag on their breast with the word &#39;paramedic&#39; written on it.
+He has heavy bags under his eyes, soot stains on his cheeks, and a receding hairline.
+&quot;Can I ask you a few questions?&quot;
+(click: &quot;Can I ask you a few questions?&quot;)[He readily tells you about last night.
+He was driving home after a shift. He was diverted from the main road by roadworks, so took a shortcut passed the cinema. He noticed the smoke coming from the alleyway and stopped to take a look when a man came sprinting out, jumping into a car up the road. He didn&#39;t pay much attention to it though, another guy stumbled out, clothes still on fire, and fell to the ground in front of him. He called an ambulance, grabbed a blanket from the back of his car and started smothering the fire, but by the time the flames died down, the guy was already dead.
+A few more people had come out by then, and ambulances were starting to arrive. He just did whatever he could. He got in the ambulance with a couple of the worse off patients. One died on the way to the hospital, he had severe burning on his chest. The other-
+The paramedic turns to you now.
+&quot;You were in the ambulance. Your hands. Has any sensation returned yet?&quot;
+(set: $Paramedic to 1)
+[[Look down|Your hands]]]]
+(if: $Paramedic is 1)[You approach the paramedic.
+&quot;Would you mind retelling me your statement?&quot;
+(click:&quot;Would you mind retelling me your statement?&quot;)[He was driving home after a shift. He was diverted from the main road by roadworks, so took a shortcut passed the cinema. He noticed the smoke coming from the alleyway and stopped to take a look when a man came sprinting out, jumping into a car up the road. He didn&#39;t pay much attention to it though, another guy stumbled out, clothes still on fire, and fell to the ground in front of him. He called an ambulance, grabbed a blanket from the back of his car and started smothering the fire, but by the time the flames died down, the guy was already dead.
+A few more people had come out by then, and ambulances were starting to arrive. He just did whatever he could. He got in the ambulance with a couple of the worse off patients. One died on the way to the hospital, he had severe burns to his chest. The other person I saw in the ambulance was you.]
+[[Move back|Street]]]</tw-passagedata><tw-passagedata pid="5" name="Street" tags="street-background" position="1350,725" size="100,100">The building in front of you is old and rundown. The brickwork is 
+[[The door into the cinema is open|Lobby]]
 
-[[A man leans against a car parked up in front of the cinema|Paramedic]]
+(if:$Paramedic is 0)[[[A man leans against a car parked up in front of the cinema|Paramedic]]
+](else-if:$Paramedic is 1)[[[The paramedic is still leaning against his car by the doors|Paramedic]]]
 
 [[A car that wasn&#39;t here before is waiting across the street|Sibling]]
 
@@ -60,7 +78,11 @@ As the fire rages on, a scream pierces the air and a car backfires as it speeds 
 
 </tw-passagedata><tw-passagedata pid="17" name="Drunk" tags="" position="1500,600" size="100,100">[[Blame him for dumping the fuel that helped the fire consume the building|Condemn Street]]
 
-[[Forgive him for being a drunken man trying to change his life for the better|Forgive Street]]</tw-passagedata><tw-passagedata pid="18" name="Friend" tags="" position="1050,1400" size="100,100">[[Get up from the seat|Theatre]]</tw-passagedata><tw-passagedata pid="19" name="Forgive Lobby" tags="" position="1125,875" size="100,100">[[Leave the man in peace|Lobby]]</tw-passagedata><tw-passagedata pid="20" name="Condemn Lobby" tags="" position="1025,925" size="100,100">[[Leave the man to consider his failure|Lobby]]</tw-passagedata><tw-passagedata pid="21" name="Condemn Street" tags="" position="1600,725" size="100,100">[[Leave the alleyway|Street]]</tw-passagedata><tw-passagedata pid="22" name="Forgive Street" tags="" position="1500,825" size="100,100">[[Leave the alleyway|Street]]</tw-passagedata><tw-passagedata pid="23" name="Condemn Staff Room" tags="" position="1750,1025" size="100,100">[[Leave her in her firetrap|Staff Room]] </tw-passagedata><tw-passagedata pid="24" name="Forgive Staff Room" tags="" position="1650,975" size="100,100">[[Leave her in peace|Staff Room]] </tw-passagedata><tw-passagedata pid="25" name="Bad End" tags="" position="825,1175" size="100,100">You have no forgiveness in your heart, not for others and certainly not for yourself. You will perish in the fire of your guilt.</tw-passagedata><tw-passagedata pid="26" name="Good End" tags="" position="825,1325" size="100,100">If you can bring yourself to forgive those that blame themselves for your partner&#39;s death, then turn forgiveness on your self. It will not cure your pain, but it will open the door out of your grief, suspending the spiral ever downward.</tw-passagedata></tw-storydata>
+[[Forgive him for being a drunken man trying to change his life for the better|Forgive Street]]</tw-passagedata><tw-passagedata pid="18" name="Friend" tags="" position="1050,1400" size="100,100">[[Get up from the seat|Theatre]]</tw-passagedata><tw-passagedata pid="19" name="Forgive Lobby" tags="" position="1125,875" size="100,100">[[Leave the man in peace|Lobby]]</tw-passagedata><tw-passagedata pid="20" name="Condemn Lobby" tags="" position="1025,925" size="100,100">[[Leave the man to consider his failure|Lobby]]</tw-passagedata><tw-passagedata pid="21" name="Condemn Street" tags="" position="1600,725" size="100,100">[[Leave the alleyway|Street]]</tw-passagedata><tw-passagedata pid="22" name="Forgive Street" tags="" position="1500,825" size="100,100">[[Leave the alleyway|Street]]</tw-passagedata><tw-passagedata pid="23" name="Condemn Staff Room" tags="" position="1750,1025" size="100,100">[[Leave her in her firetrap|Staff Room]] </tw-passagedata><tw-passagedata pid="24" name="Forgive Staff Room" tags="" position="1650,975" size="100,100">[[Leave her in peace|Staff Room]] </tw-passagedata><tw-passagedata pid="25" name="Bad End" tags="" position="825,1175" size="100,100">You have no forgiveness in your heart, not for others and certainly not for yourself. You will perish in the fire of your guilt.</tw-passagedata><tw-passagedata pid="26" name="Good End" tags="" position="825,1325" size="100,100">If you can bring yourself to forgive those that blame themselves for your partner&#39;s death, then turn forgiveness on your self. It will not cure your pain, but it will open the door out of your grief, suspending the spiral ever downward.</tw-passagedata><tw-passagedata pid="27" name="Your hands" tags="" position="1225,550" size="100,100">He must have mistaken you for somebody else. Your hands are fine.
+(click-replace: &quot;fine&quot;)[burning](click-replace: &quot;burning&quot;)[boiling](click-replace: &quot;boiling&quot;)[mangled](click-replace: &quot;mangled.&quot;)[bandaged. Bandaged and numb.
+Support beams are catching fire as you desperately try to lift them. Your arms are too weak.
+You shake the vision away and stumble back from the paramedic.
+[[You&#39;re done here|Street]]]</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
