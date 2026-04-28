@@ -9,7 +9,16 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play Hauntings.</tw-noscript></noscript></tw-story>
-<tw-storydata name="Hauntings" startnode="1" creator="Twine" creator-version="2.12.0" format="Harlowe" format-version="3.3.9" ifid="9EF3ED78-85E6-49BD-A3DE-25EAA45B3181" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">tw-story[tags~="street-background"] {  /* the tag added in step 2 */
+<tw-storydata name="Hauntings" startnode="1" creator="Twine" creator-version="2.12.0" format="Harlowe" format-version="3.3.9" ifid="9EF3ED78-85E6-49BD-A3DE-25EAA45B3181" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">tw-link, tw-link:link, tw-link:visited, tw-link.visited, .enchantment-link {
+  color: red;
+  text-decoration: underline;
+}
+tw-link:focus, tw-link:hover, tw-link:active, tw-link.visited:hover, .enchantment-link:hover {
+  color: darkred;
+  text-decoration: none;
+}
+
+tw-story[tags~="street-background"] {  /* the tag added in step 2 */
   background-image: url(./images/cinema.jpg);  /* the image added in step 1 */
   background-size: cover;  /* cover the whole element */
   background-repeat: no-repeat;  /* do not repeat the background image */
@@ -44,7 +53,7 @@ The paramedic turns to you now.
 &quot;Would you mind retelling me your statement?&quot;
 (click:&quot;Would you mind retelling me your statement?&quot;)[He was driving home after a shift. He was diverted from the main road by roadworks, so took a shortcut passed the cinema. He noticed the smoke coming from the alleyway and stopped to take a look when a man came sprinting out, jumping into a car up the road. He didn&#39;t pay much attention to it though, another guy stumbled out, clothes still on fire, and fell to the ground in front of him. He called an ambulance, grabbed a blanket from the back of his car and started smothering the fire, but by the time the flames died down, the guy was already dead.
 A few more people had come out by then, and ambulances were starting to arrive. He just did whatever he could. He got in the ambulance with a couple of the worse off patients. One died on the way to the hospital, he had severe burns to his chest. The other person I saw in the ambulance was you.]
-[[Move back|Street]]]</tw-passagedata><tw-passagedata pid="5" name="Street" tags="street-background" position="1350,725" size="100,100">The building in front of you is old and rundown. The brickwork is 
+[[Move back|Street]]]</tw-passagedata><tw-passagedata pid="5" name="Street" tags="street-background" position="1350,725" size="100,100">The building in front of you is old and rundown. The sign is windworn and fading, the architecture hard to place, and the windows grimy.
 [[The door into the cinema is open|Lobby]]
 
 (if:$Paramedic is 0)[[[A man leans against a car parked up in front of the cinema|Paramedic]]
